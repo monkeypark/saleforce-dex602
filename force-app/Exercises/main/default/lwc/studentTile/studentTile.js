@@ -1,10 +1,7 @@
 import { LightningElement, api } from "lwc";
 
 export default class StudentTile extends LightningElement {
-	@api student = {
-		Name: "Ming",
-		PhotoUrl: "/profilephoto/005/T"
-	};
+	@api student = {};
 
 	@api isSelected = false;
 
@@ -13,6 +10,6 @@ export default class StudentTile extends LightningElement {
 	}
 
 	handleStudentClick() {
-		alert(this.student.Name);
+		alert(this.student.Name + " ==> " + this.student.Id);
 	}
 }
