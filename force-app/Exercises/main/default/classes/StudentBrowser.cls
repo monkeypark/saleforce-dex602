@@ -19,7 +19,7 @@ public with sharing class StudentBrowser {
         }
 		query += 'WITH USER_MODE ';
 		query += 'ORDER BY Name';
-		
+		System.debug(query);
 		return Database.query(query);
     }
 }
