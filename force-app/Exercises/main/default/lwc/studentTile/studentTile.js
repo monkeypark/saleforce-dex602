@@ -3,13 +3,16 @@ import { LightningElement, api } from "lwc";
 export default class StudentTile extends LightningElement {
 	@api student = {};
 
-	@api isSelected = false;
+	@api selectedStudentId = "";
 
 	get tileSelected() {
-		return this.isSelected ? "tile selected" : "tile";
+		return this.selectedStudentId === this.student.Id ? "tile selected" : "tile";
 	}
 
 	handleStudentClick() {
-		alert(this.student.Name + " ==> " + this.student.Id);
+		const evt = new CustomEvent("studentselected", {
+			detail: { studentId: this.student.Id }
+		});
+		this.dispatchEvent(evt);
 	}
 }
