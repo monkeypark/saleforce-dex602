@@ -21,7 +21,7 @@
 
 		<template lwc:elseif={certifiedStudentsView}>
 			<lightning-layout-item padding="around-small" size="10">
-				<lightning-card title="Certified Students will go here"></lightning-card>
+				<c-certified-student-list certification-name={certificationName} certification-id={certificationId}> </c-certified-student-list>
 			</lightning-layout-item>
 		</template>
 
