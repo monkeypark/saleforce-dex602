@@ -1,9 +1,10 @@
-  <LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
-    <masterLabel>SelectedStudentChannel</masterLabel> 
-    <isExposed>true</isExposed> 
-    <description>Lightning Message Channel for Selected Student.</description>     
-    <lightningMessageFields> 
-      <fieldName>studentId</fieldName> 
-      <description>This is the record Id for the selected student.</description>   
-    </lightningMessageFields> 
-  </LightningMessageChannel>
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Lightning Message Channel for Selected Student.</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is the record Id for the selected student.</description>
+        <fieldName>studentId</fieldName>
+    </lightningMessageFields>
+    <masterLabel>SelectedStudentChannel</masterLabel>
+</LightningMessageChannel>
