@@ -1,11 +1,14 @@
 {
-    "codeBuilder.showWelcomePage": false,
-    "explorer.compactFolders": false,
-    "editor.formatOnSave": true,
-    "workbench.editor.enablePreview": false,
-    "editor.minimap.enabled": false,
-    "editor.mouseWheelZoom": true,
-    "files.autoSave": "off",
-    "salesforce.einsteinForDevelopers.enableAutocompletions": false,
-    "xml.preferences.showSchemaDocumentationType": "none"
+	"codeBuilder.showWelcomePage": false,
+	"explorer.compactFolders": false,
+	"editor.formatOnSave": true,
+	"editor.minimap.enabled": false,
+	"editor.mouseWheelZoom": true,
+	"files.autoSave": "off",
+	"salesforce.einsteinForDevelopers.enableAutocompletions": false,
+	"xml.preferences.showSchemaDocumentationType": "none",
+
+	"workbench.list.openMode": "singleClick",
+	"workbench.editor.enablePreview": true,
+	"workbench.editor.enablePreviewFromQuickOpen": true
 }
