@@ -31,9 +31,16 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 	}
 
 	updateSelectedStudent(studentId) {
-		publish(this.messageContext, SELECTED_STUDENT_CHANNEL, {
-			studentId: studentId
-		});
+		const gallery = this.template.querySelector("c-student-tiles");
+		const grid = this.template.querySelector("c-responsive-datatable");
+		if (gallery) {
+			gallery.setSelectedStudent(studentId);
+		}
+		if (grid) {
+			grid.setSelectedRecord(studentId);
+		}
+
+		publish(this.messageContext, SELECTED_STUDENT_CHANNEL, { studentId: studentId });
 	}
 
 	handleRowDblClick(event) {
@@ -46,5 +53,9 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 				actionName: "edit"
 			}
 		});
+	}
+	handleRowClick(event) {
+		const studentId = event.detail.pk;
+		this.updateSelectedStudent(studentId);
 	}
 }
