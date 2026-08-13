@@ -10,6 +10,7 @@ import FIELD_DESCRIPTION from "@salesforce/schema/Contact.Description";
 import FIELD_EMAIL from "@salesforce/schema/Contact.Email";
 import FIELD_PHONE from "@salesforce/schema/Contact.Phone";
 import FIELD_NAME from "@salesforce/schema/Contact.Name";
+import Utils from "c/utils";
 
 const fields = [FIELD_NAME, FIELD_DESCRIPTION, FIELD_EMAIL, FIELD_PHONE];
 
@@ -46,19 +47,19 @@ export default class StudentDetail extends LightningElement {
 	}
 
 	get name() {
-		return this._getDisplayValue(this.wiredStudent.data, FIELD_NAME);
+		return Utils.getDisplayValue(this.wiredStudent.data, FIELD_NAME);
 	}
 
 	//TODO #5: We provided a getter for the name field.
 	// 		   To prepare for Lab 1, create getters for the description, phone, and email fields.
 	get description() {
-		return this._getDisplayValue(this.wiredStudent.data, FIELD_DESCRIPTION);
+		return Utils.getDisplayValue(this.wiredStudent.data, FIELD_DESCRIPTION);
 	}
 	get email() {
-		return this._getDisplayValue(this.wiredStudent.data, FIELD_EMAIL);
+		return Utils.getDisplayValue(this.wiredStudent.data, FIELD_EMAIL);
 	}
 	get phone() {
-		return this._getDisplayValue(this.wiredStudent.data, FIELD_PHONE);
+		return Utils.getDisplayValue(this.wiredStudent.data, FIELD_PHONE);
 	}
 	//TODO #6: Review the cardTitle getter, and the _getDisplayValue function below.
 
@@ -70,9 +71,5 @@ export default class StudentDetail extends LightningElement {
 			title = "Something went wrong...";
 		}
 		return title;
-	}
-
-	_getDisplayValue(data, field) {
-		return getFieldDisplayValue(data, field) ? getFieldDisplayValue(data, field) : getFieldValue(data, field);
 	}
 }

@@ -1,4 +1,5 @@
 import { LightningElement } from "lwc";
+import Utils from "c/utils";
 
 const VIEW_STUDENT_BROWSER = "students";
 const VIEW_TRIP_REPORTS = "tripreports";
@@ -9,6 +10,10 @@ export default class LayoutManager extends LightningElement {
 	viewMode = VIEW_STUDENT_BROWSER;
 	certificationName = "";
 	certificationId = 0;
+
+	connectedCallback() {
+		Utils.showToast(this, "Welcome", `Don't forget to check back here for updated class schedules and assignments`, "info", "dismissible");
+	}
 
 	handleNavItemSelected(event) {
 		const selectedItemName = event.detail.itemName;
