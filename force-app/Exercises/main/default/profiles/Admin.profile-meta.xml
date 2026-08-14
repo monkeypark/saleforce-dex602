@@ -24,6 +24,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CertPopularity</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CertificationElementsData</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -77,6 +81,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>StudentBrowserForm</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>TripReportBrowser</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
