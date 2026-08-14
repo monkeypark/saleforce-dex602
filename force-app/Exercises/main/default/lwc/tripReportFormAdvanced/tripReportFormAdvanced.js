@@ -25,7 +25,7 @@ const fieldsToLoad = [FIELD_DATE, FIELD_INSTRUCTOR, FIELD_NAME, FIELD_RATING, FI
 export default class TripReportFormAdvanced extends LightningElement {
 	error;
 	_editorInitialized;
-
+	saveButtonDisabled = true;
 	@api recordId;
 
 	//arrays to populate form options
@@ -153,5 +153,13 @@ export default class TripReportFormAdvanced extends LightningElement {
 					Utils.showToast(this, "Error Updating Record", errorBody, "error", "dismissible");
 				});
 		}
+	}
+	validateFields() {
+		const fields = Array.from(this.template.querySelectorAll(".validateMe"));
+		return fields.every((currField) => currField.checkVisibility());
+	}
+
+	handleBlur() {
+		this.saveButtonDisabled = !this.validateFields();
 	}
 }
