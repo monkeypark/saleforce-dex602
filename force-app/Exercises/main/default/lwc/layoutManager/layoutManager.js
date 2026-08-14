@@ -10,9 +10,16 @@ export default class LayoutManager extends LightningElement {
 	viewMode = VIEW_STUDENT_BROWSER;
 	certificationName = "";
 	certificationId = 0;
-
+	loading = true;
 	connectedCallback() {
 		Utils.showToast(this, "Welcome", `Don't forget to check back here for updated class schedules and assignments`, "info", "dismissible");
+		this.template.addEventListener("loading", this.handleLoading);
+		this.template.addEventListener("doneloading", this.handleDoneLoading);
+	}
+
+	disconnectedCallback() {
+		this.template.removeEventListener("loading", this.handleLoading);
+		this.template.removeEventListener("doneloading", this.handleDoneLoading);
 	}
 
 	handleNavItemSelected(event) {
@@ -44,4 +51,11 @@ export default class LayoutManager extends LightningElement {
 	get certPopularityView() {
 		return this.viewMode === VIEW_POPULARITY;
 	}
+
+	handleLoading = () => {
+		this.loading = true;
+	};
+	handleDoneLoading = () => {
+		this.loading = false;
+	};
 }
