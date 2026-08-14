@@ -4,12 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-      "prettier": "prettier"
+        "prettier": "prettier"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "prettier": "2.1.2",
-      "prettier-plugin-apex": "1.7.0"
+        "prettier": "^2.1.2",
+        "prettier-plugin-apex": "^1.13.0"
     }
-  }
+}

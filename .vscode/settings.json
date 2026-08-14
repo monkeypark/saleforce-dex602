@@ -10,5 +10,15 @@
 
 	"workbench.list.openMode": "singleClick",
 	"workbench.editor.enablePreview": true,
-	"workbench.editor.enablePreviewFromQuickOpen": true
+	"workbench.editor.enablePreviewFromQuickOpen": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnPaste": true,
+	"[apex]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[apex-anon]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	}
 }
